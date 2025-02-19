@@ -1,73 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Calculate Widget</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-}
+  <title>Calculate Widget</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css"/>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background-color: #f5f5f5; 
+    }
 
-form {
-  width: 300px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
+    .container { 
+      max-width: 500px; 
+      margin: 50px auto; 
+      padding: 20px; 
+      border: 1px solid #ddd; 
+      border-radius: 5px; 
+      background-color: #fff; 
+    }
 
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-}
+    .form-control { 
+      margin-bottom: 10px; 
+    }
 
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .btn { 
+      background-color: #4CAF50; 
+      color: white; 
+    }
 
-#result {
-  margin-top: 20px;
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-}
-</style>
+    #result { 
+      margin-top: 20px; 
+      font-size: 22px; 
+      font-weight: bold; 
+      text-align: center; 
+    }
+
+    #log { 
+      margin-top: 30px; 
+    }
+  </style>
 </head>
 <body>
-<form id="myForm">
-  <h2>Calculate</h2>
-  <input type="text" id="x1" placeholder="Enter X1" required><br>
-  <input type="text" id="y1" placeholder="Enter Y1" required><br>
-  <input type="text" id="z1" placeholder="Enter Z1" required><br>
-  <input type="text" id="x2" placeholder="Enter X2" required><br>
-  <input type="text" id="y2" placeholder="Enter Y2" required><br>
-  <input type="text" id="z2" placeholder="Enter Z2" required><br>
-  <button type="button" onclick="calculate()">Calculate</button>
-</form>
-<div id="result"></div>
+  <div class="container">
+    <h2>Calculate</h2>
+    <form id="myForm">
+      <input type="text" id="x1" class="form-control" placeholder="Enter X1" required>
+      <input type="text" id="y1" class="form-control" placeholder="Enter Y1" required>
+      <input type="text" id="z1" class="form-control" placeholder="Enter Z1" required>
+      <input type="text" id="x2" class="form-control" placeholder="Enter X2" required>
+      <input type="text" id="y2" class="form-control" placeholder="Enter Y2" required>
+      <input type="text" id="z2" class="form-control" placeholder="Enter Z2" required>
+      <button type="button" class="btn btn-block" onclick="calculate()">Calculate</button>
+    </form>
+    <div id="result"></div>
+    <div id="log"></div>
+  </div>
+  <script>
+    var log = [];
+    function calculate() {
+      var x1 = document.getElementById('x1').value;
+      var y1 = document.getElementById('y1').value;
+      var z1 = document.getElementById('z1').value;
 
-<script>
-function calculate() {
-  var x1 = document.getElementById('x1').value;
-  var y1 = document.getElementById('y1').value;
-  var z1 = document.getElementById('z1').value;
+      var x2 = document.getElementById('x2').value;
+      var y2 = document.getElementById('y2').value;
+      var z2 = document.getElementById('z2').value;
 
-  var x2 = document.getElementById('x2').value;
-  var y2 = document.getElementById('y2').value;
-  var z2 = document.getElementById('z2').value;
+      var result = Math.abs(x2 - x1) + Math.abs(y2 - y1) + Math.abs(z2 - z1);
+      document.getElementById('result').innerHTML = 'Result: ' + result;
 
-  var result = Math.abs(x2 - x1) + Math.abs(y2 - y1) + Math.abs(z2 - z1);
-  document.getElementById('result').innerHTML = 'Result: ' + result;
-}
-</script>
+      log.push({ x1: x1, y1: y1, z1: z1, x2: x2, y2: y2, z2: z2, result: result });
+
+      var logOutput = '';
+      log.forEach((entry, index) => {
+        logOutput += `Entry ${index + 1}: coordinates (${entry.x1}, ${entry.y1}, ${entry.z1}) and (${entry.x2}, ${entry.y2}, ${entry.z2}), result: ${entry.result}<br>`;
+      });
+
+      document.getElementById('log').innerHTML = logOutput;
+    }
+  </script>
 </body>
 </html>
