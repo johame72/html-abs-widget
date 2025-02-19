@@ -1,17 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculate Widget</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+form {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+</style>
+</head>
+<body>
 <form id="myForm">
   <h2>Calculate</h2>
-  <input type="text" id="x1" placeholder="Enter X1"><br>
-  <input type="text" id="y1" placeholder="Enter Y1"><br>
-  <input type="text" id="z1" placeholder="Enter Z1"><br>
-  <input type="text" id="x2" placeholder="Enter X2"><br>
-  <input type="text" id="y2" placeholder="Enter Y2"><br>
-  <input type="text" id="z2" placeholder="Enter Z2"><br>
+  <input type="text" id="x1" placeholder="Enter X1" required><br>
+  <input type="text" id="y1" placeholder="Enter Y1" required><br>
+  <input type="text" id="z1" placeholder="Enter Z1" required><br>
+  <input type="text" id="x2" placeholder="Enter X2" required><br>
+  <input type="text" id="y2" placeholder="Enter Y2" required><br>
+  <input type="text" id="z2" placeholder="Enter Z2" required><br>
   <button type="button" onclick="calculate()">Calculate</button>
 </form>
 <div id="result"></div>
 
-
-function calculate(){
+<script>
+function calculate() {
   var x1 = document.getElementById('x1').value;
   var y1 = document.getElementById('y1').value;
   var z1 = document.getElementById('z1').value;
@@ -20,24 +65,9 @@ function calculate(){
   var y2 = document.getElementById('y2').value;
   var z2 = document.getElementById('z2').value;
 
-  var result = Math.abs(x2-x1)+Math.abs(y2-y1)+Math.abs(z2-z1);
+  var result = Math.abs(x2 - x1) + Math.abs(y2 - y1) + Math.abs(z2 - z1);
   document.getElementById('result').innerHTML = 'Result: ' + result;
 }
-
-
-form {
-  width: 200px;
-  margin: 0 auto;
-}
-input[type="text"] {
-  width: 100%;
-  margin-bottom: 10px;
-}
-button {
-  width: 100%;
-}
-#result {
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: bold;
-}
+</script>
+</body>
+</html>
