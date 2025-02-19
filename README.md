@@ -1,22 +1,35 @@
-ABS Right-Angle Tubing Length Calculator Widget 📊💻🛠
-Welcome to the BAS Widget repository! This repository is designed to help calculate the length of Right Angle Tubing by taking in six coordinate values (x₁, y₁, z₁, x₂, y₂, z₂) and returning the absolute distance considering each coordinate axis. It can be used by developers, engineers, data scientists and those who need to quickly and accurately calculate distances across multiple axes. 🧪📓📐
+# 👋 Welcome to ABS Widget 📊 📐📏
+> This tool is designed to help you calculate the absolute difference between two sets of 3D coordinates. It's perfect for understanding distances in a 3D space, and great for geometry & engineering projects! 📚🚀🔧
 
-How to use? 🧐🤔💡
-The widget is an interactive HTML form that you can use within a web browser. All you need to do is:
+## 🚀 Getting Started
+To get started, you just need to clone this repository to your local machine. 
 
-Enter values for x₁, y₁, z₁, x₂, y₂, z₂ coordinates. 📝
-Click on the "Calculate" button. 🖱 This will give you the absolute distance across the x, y, and z axes. The result is displayed below the form.
-You can keep repeating the process for new sets of coordinates. Each result will be logged below the calculate form.
-If you need to clear the form and start fresh, click on the "Clear" button.
-Deployment 🚀🌐🔗
-To use this widget, simply embed the HTML code in your project or web page. Ensure that the link to the Bootstrap CSS file is retained for proper styling.
+```bash
+git clone https://github.com/[your-github-username]/abs-widget.git
+```
 
-Feedback? 💌👂🆘
-Found a bug? 🐛 Have some enhancements in your mind? 🧠 Feel free to raise an issue or submit a PR.
+Then, simply open the `index.html` file in a web browser. No additional setup is required 🎉🎉🎉
 
-We hope you find this widget useful and we look forward to your contributions and feedback. Happy calculating! 🙌💪🎉
+## 💻 How It Works
+The ABS Widget is a simple web-based tool. You can enter two sets of (x, y, z) coordinates. The tool calculates the absolute difference using the formula: 
 
-License 📜⚖🔏
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+`|x2 - x1| + |y2 - y1| + |z2 - z1|`
 
-Disclaimer: Please ensure to use the widget responsibly and validate the calculated results independently, especially while using it for critical calculations.
+You can also clear the inputs and the results using the "Clear" button. 
+
+## 📘 Logs
+Every time you calculate a result, it will be stored in the log section. This allows you to track your calculations and see a history of your inputs and results. 
+
+## 📜 License
+This project is licensed under the MIT License.
+
+## 💖 Contributions
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/[your-github-username]/abs-widget/issues) to contribute.
+
+## 🎈 Support
+Give a ⭐️ if this project helped you!
+
+## 📙 Contact
+If you have any questions, comments or suggestions, feel free to contact me.
+
+Happy Calculating! 🎈 🎉 📏 📐 📊
